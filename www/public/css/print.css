@@ -1,0 +1,28 @@
+/*
+==========================================================================
+Styling for printing
+==========================================================================
+*/
+/* Allgemein */
+body{
+    background-color: #fff;
+    color:#000;
+    font-family:serif;
+    font-size: 13pt;
+ }
+ /* URL einblenden */
+ a::after{
+     content: " (" attr(href) ") ";
+ }
+ /* alle Images ausblenden */
+ img{
+     display:none;
+ }
+ /* Navigation ausblenden */
+ .sidebar{
+     display:none;
+ }
+  /* Footer ausblenden */
+  .sidebar{
+    display:none;
+}

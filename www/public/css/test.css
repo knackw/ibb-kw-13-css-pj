@@ -1,0 +1,78 @@
+div.main div.participation p:nth-child(2)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: rgb(105, 105, 105);
+	content: "\f77d";
+	border-radius: 50%;
+	background-color: ivory;
+	padding: 0.5rem;
+	margin-right:0.5rem;
+	float:left;
+	vertical-align:middle;
+}
+div.main div.participation p:nth-child(2) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+div.main div.participation p:nth-child(2)::after {
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden;
+}
+div.main div.participation p:nth-child(3)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: rgb(105, 105, 105);
+	content: "\f77d";
+	border-radius: 50%;
+	background-color: ivory;
+	padding: 0.5rem;
+	margin-right:0.5rem;
+	float:left;
+	vertical-align:middle;
+}
+div.main div.participation p:nth-child(3) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+div.main div.participation p:nth-child(3)::after {
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden;
+}
+div.main div.participation p:nth-child(4)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: rgb(105, 105, 105);
+	content: "\f77d";
+	border-radius: 50%;
+	background-color: ivory;
+	padding: 0.5rem;
+	margin-right:0.5rem;
+	float:left;
+	vertical-align:middle;
+}
+div.main div.participation p:nth-child(4) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+div.main div.participation p:nth-child(4)::after {
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden;
+}

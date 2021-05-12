@@ -1,0 +1,731 @@
+/* 
+==========================================================================================
+css Zen Garden - 'Floating Boxes', by Elliot Harald Schwankl
+css released under Creative Commons License - https://creativecommons.org/licenses/by/4.0/
+========================================================================================== 
+*/
+/* 
+	================================================
+	CSS Zen Garden theme
+	================================================
+	Last updated on 08.04.2021
+	================================================
+	01	Font declaration
+	02	Global definitions
+	03	Typography
+	04	Layout
+	05	Media Queries
+	===============================================
+*/
+
+/* ==========================================================================
+01 Font NotoSans-Regular
+========================================================================== */
+@font-face {
+  font-family: "NotoSans-Regular";
+  src: url("../fonts/Noto_Sans/NotoSans-Regular.woff2") format("woff2"),
+    url("../fonts/Noto_Sans/NotoSans-Regular.ttf") format("TrueType");
+}
+/* icon fonts */
+@font-face {
+  font-family: "verdemoderna";
+  src: url("../fonts/verdemoderna.eot");
+  src: url("../fonts/verdemoderna.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/verdemoderna.woff") format("woff"),
+    url("../fonts/verdemoderna.ttf") format("truetype"),
+    url("../fonts/verdemoderna.svg#verdemoderna") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*
+==========================================================================
+02 Global definitions
+==========================================================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+div,
+article,
+section,
+header,
+footer,
+nav,
+figure,
+li {
+  position: relative;
+}
+/*
+==========================================================================
+03 Typography
+==========================================================================
+*/
+/*
+	Font Size
+	14 / 16	= 		0.875em 		(14px equivalent)
+	16 / 16	= 		1em 			(16px equivalent)
+	18 / 16 = 		1.125em 		(18px equivalent)
+	21 / 16 = 		1.3125em 		(21px equivalent)
+	24 / 16 = 		1.5em 			(24px equivalent)
+	30 / 16 = 		1.875em 		(30px equivalent)
+	36 / 16 = 		2.25em 			(36px equivalent)
+	48 / 16 = 		3em 			(48px equivalent)
+	60 / 16 = 		3.75em 			(60px equivalent)
+	72 / 16 = 		4.5em 			(72px equivalent)
+	96 / 16 = 		6em 			(96px equivalent)
+*/
+/*
+	Color Palette
+
+h6 {
+  color: #ffa69e;
+  color: rgba(255, 166, 158, 1);
+  color: #faf3dd;
+  color: rgba(250, 243, 221, 1);
+  color: #b8f2e6;
+  color: rgba(184, 242, 230, 1);
+  color: #aed9e0;
+  color: rgba(174, 217, 224, 1);
+  color: #5e6472;
+  color: rgba(94, 100, 114, 1);
+}
+*/
+/*
+	Color Palette
+*/
+/* Fonts */
+body {
+  font-family: NotoSans-Regular;
+}
+/* Headings */
+h1 {
+  color: #eee;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: nowrap;
+  animation: typing 6s steps(48) forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 48ch;
+  }
+}
+h2 {
+  color: #eee;
+  font-weight: 900;
+  font-size: 6em;
+  letter-spacing: 1px;
+  line-height: 1em;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+@keyframes mymove {
+  0% {
+    top: 0px;
+    left: 0px;
+    color: #ffa69e;
+  }
+  25% {
+    top: 0px;
+    left: 20px;
+    color: #faf3dd;
+  }
+  50% {
+    top: 20px;
+    left: 20px;
+    color: #b8f2e6;
+  }
+  75% {
+    top: 20px;
+    left: 0px;
+    color: #aed9e0;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    color: #93969e;
+  }
+}
+h3 {
+  font-size: 2.25em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1em;
+  padding: 0.5em 0 0.25em 0;
+}
+aside.sidebar h3 {
+  color: rgb(33, 77, 97);
+  font-size: 1.5em;
+  font-weight: 200;
+  letter-spacing: 1px;
+  line-height: 1em;
+  padding: 0.5em 0 0.25em 0;
+}
+/* Links */
+a {
+  border-bottom: 3px dotted #fff;
+  color: rgb(70, 75, 85);
+  text-decoration: none;
+  transition: border-color 0.2s ease-in-out;
+}
+a:hover {
+  border-bottom: 1px solid #fff;
+}
+div.requirements a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  color: rgba(255, 166, 158, 1);
+  text-decoration: none;
+  transition: border-color 0.2s ease-in-out;
+}
+div.requirements a:hover {
+  border-color: #fff;
+}
+section.intro div.summary p a,
+div.explanation p a,
+div.participation p a {
+  color: #eee;
+}
+div.participation p a:hover {
+  border-color: #eee;
+}
+p,
+.design-selection li a:nth-child(1) {
+  display: block;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  padding: 0.5em 0;
+}
+.design-selection li a {
+  border-bottom: 0px solid #fff;
+}
+.design-selection li a:hover {
+  color: rgb(52, 134, 146);
+}
+.zen-resources li a {
+  border-bottom: 0px solid #fff;
+}
+.zen-resources li a:hover {
+  color: rgb(204, 117, 109);
+}
+h1,
+section.intro div.summary p,
+div.requirements p:last-child {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+section.intro div.summary p:last-child {
+  border-top: 1px solid #eee;
+  margin-top: 1em;
+  padding-top: 1.5em;
+}
+div.requirements p:last-child {
+  border-top: 1px solid #fff;
+  margin-top: 1em;
+  padding-top: 1.5em;
+}
+/* something else */
+strong {
+  font-style: normal;
+  font-weight: 400;
+}
+div.main div.participation p:nth-child(2)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: #fff;
+	content: "\f422";
+	padding: 0.5rem;
+	margin-right:0.5rem;
+}
+div.main div.participation p:nth-child(2) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+div.main div.participation p:nth-child(3)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: #fff;
+	content: "\f126";
+	padding: 0.5rem;
+	margin-right:0.5rem;
+}
+div.main div.participation p:nth-child(3) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+div.main div.participation p:nth-child(4)::before {
+	font-family: "Font Awesome 5 Free";
+	font-variant: contextual;
+	font-weight: 900;
+	font-size: auto;
+	color: #fff;
+	content: "\f381";
+	padding: 0.5rem;
+	margin-right:0.5rem;
+}
+div.main div.participation p:nth-child(4) {
+	display: block;
+	align-items: center;
+	padding-left: 0px;
+}
+/*
+==========================================================================
+04 Layout
+==========================================================================
+*/
+html {
+  background-image: url("../images/background.jpg");
+  padding: 4%;
+}
+body {
+  background: rgba(94, 100, 114, 0.6);
+}
+section.intro {
+  padding: 5%;
+}
+section.intro div.summary {
+  color: #eee;
+  padding: 5% 0;
+  padding-right: 10%;
+}
+section.intro div.preamble {
+  background: rgba(184, 242, 230, 0.3);
+  color: #eee;
+  margin-left: -30%;
+  padding: 5% 5% 5% 30%;
+  text-align: right;
+}
+aside.sidebar {
+  background: rgba(250, 243, 221, 0.8);
+  padding: 3%;
+}
+aside.sidebar ul {
+  padding: 0.5em 0 2em 0;
+}
+aside.sidebar ul li {
+  color: rgba(0, 0, 0, 0.4);
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.825em 0;
+}
+footer {
+  background: rgba(184, 242, 230, 0.4);
+  clear: both;
+  color: #eee;
+  padding: 1.15em 5%;
+  padding-bottom:0px;
+  width: 90%;
+  height: 70px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+footer a {
+  font-size: 0px;
+  border: 0px solid #fff;
+  display: inline-block;
+  overflow: hidden;
+  width: 60px;
+  height: 40px;
+  padding: 60px 0 0 0;
+  margin: 0 0.5em;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+footer a:hover,
+footer a:focus {
+  border: 0px solid #fff;  
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+footer a:visited {
+  color: rgba(255, 255, 255, 0.2);
+}
+footer a::before {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  overflow: visible;
+  font-size: 46px;
+  text-indent: 0;
+  font-family: "verdemoderna";
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+footer a.zen-validate-html::before {
+  content: "5";
+}
+footer a.zen-validate-html:hover::before,
+footer a.zen-validate-html:focus::before {
+  content: "%";
+}
+footer a.zen-validate-css::before {
+  content: "3";
+}
+footer a.zen-validate-css:hover::before,
+footer a.zen-validate-css:focus::before {
+  content: "#";
+}
+footer a.zen-license::before {
+  content: "c";
+}
+footer a.zen-license:hover::before,
+footer a.zen-license:focus::before {
+  content: "C";
+}
+footer a.zen-accessibility::before {
+  content: "a";
+}
+footer a.zen-accessibility:hover::before,
+footer a.zen-accessibility:focus::before {
+  content: "A";
+}
+footer a.zen-github::before {
+  content: "g";
+}
+footer a.zen-github:hover::before,
+footer a.zen-github:focus::before {
+  content: "G";
+}
+div.explanation {
+  color: #eee;
+  padding: 5%;
+  padding-top: 0%;
+}
+div.participation {
+  background: rgba(255, 166, 158, 0.4);
+  color: #eee;
+  padding: 5%;
+}
+div.benefits {
+  background: rgba(250, 243, 221, 0.8);
+  color: #333;
+  margin-top: 5%;
+  padding: 2% 5%;
+}
+div.requirements {
+  background: rgba(94, 100, 114, 0.8);
+  color: #eee;
+  margin-left: -30%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5% 5% 5% 30%;
+  text-align: right;
+}
+/*
+==========================================================================
+05 Media-Query
+==========================================================================
+*/
+/* 1 and up */
+@media screen and (min-width: 1px) {
+  body {
+    font-size: 85%;
+  }
+  .design-archives li a {
+    border-bottom: 0px solid #fff;
+  }
+  .design-archives li a:hover {
+    color: rgb(73, 138, 125);
+  }
+}
+/* 550 and up */
+@media screen and (min-width: 650px) {
+  h2 {
+    font-size: 8em;
+  }
+  body {
+    padding-right: 5%;
+  }
+  section.intro {
+    width: 66.6%;
+  }
+  aside.sidebar {
+    position: absolute;
+    right: 0px;
+    top: 2.5%;
+    width: 20%;
+  }
+  div.explanation {
+    float: left;
+    width: 50%;
+  }
+  div.participation {
+    float: left;
+    width: 49%;
+  }
+  div.benefits {
+    float: left;
+    margin-top: 12%;
+    margin-left: 5%;
+    padding-top: 0px;
+    width: 25%;
+  }
+  div.requirements {
+    float: left;
+    margin-top: 5%;
+    margin-bottom:3%;
+    width: 69%;
+  }
+  footer {
+    padding: 1.15em 5%;
+    padding-bottom:0px;
+    width: 95.2%;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+}
+/* 700 and up */
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 90%;
+  }
+}
+/* 800 and up */
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 100%;
+  }
+}
+/* 900 and up */
+@media screen and (min-width: 900px) {
+  body {
+    font-size: 110%;
+  }
+  .intro a,
+  .intro a:visited {
+    border-bottom: 0px solid #fff;
+    position: relative;
+    display: inline-block;
+    padding: 2px 10px 1px 23px;
+    margin: -1px -10px -1px -6px;
+    border-radius: 1px;
+    color: #809b7e;
+    text-transform: uppercase;
+  }
+  .intro a:hover,
+  .intro a:focus {
+    z-index: 2;
+    color: #fff;
+    background: #a6b0b3;
+    text-decoration: none;
+  }
+  .intro a::before {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    padding: 4px;
+    color: #a9b995;
+    background: #d9e1cd;
+    border-radius: 2px;
+    content: "D";
+    font-size: 10px;
+    text-indent: 0;
+    font-family: "verdemoderna";
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    transition: all 0.25s ease-out;
+  }
+}
+@keyframes mymove {
+  0% {
+    top: 0px;
+    left: 0px;
+    color: #ffa69e;
+  }
+  25% {
+    top: 0px;
+    left: 30px;
+    color: #faf3dd;
+  }
+  50% {
+    top: 30px;
+    left: 30px;
+    color: #b8f2e6;
+  }
+  75% {
+    top: 30px;
+    left: 0px;
+    color: #aed9e0;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    color: #93969e;
+  }
+}
+/* 1500 and up */
+@media screen and (min-width: 1500px) {
+  body {
+    font-size: 125%;
+  }
+  .intro a,
+  .intro a:visited {
+    padding: 0px 10px 1px 22px;
+    margin: -1px -10px -1px -6px;
+  }
+  .intro a::before {
+    top: 6px;
+    left: 0px;
+    font-size: 10px;
+  }
+  .design-archives {
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.6);
+    margin-bottom: 25px;
+  }
+  .design-archives h3 {
+    display: none;
+  }
+  .design-archives ul {
+    margin: 0;
+  }
+  .design-archives li {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+  }
+  .design-archives li.viewall {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 71px;
+    line-height: 50px;
+  }
+  .previous,
+  .next {
+    left: 0;
+    z-index: 3;
+  }
+  .next {
+    left: auto;
+    right: 0;
+  }
+  .design-archives a,
+  .design-archives a:visited {
+    border-bottom: 0 solid #fff;
+    color: #888;
+  }
+  .design-archives a:hover,
+  .design-archives a:focus {
+    color: #000;
+  }
+  .design-archives .previous a,
+  .design-archives .next a {
+    display: block;
+    overflow: hidden;
+    width: 50px;
+    height: 70px;
+    text-indent: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .design-archives .viewall a {
+    z-index: 5;
+    width: 100%;
+    min-height: 70px;
+    padding: 12px 0 0 0;
+    text-align: center;
+  }
+  .design-archives a::before {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    text-indent: 0;
+    font-size: 40px;
+    font-family: "verdemoderna";
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 70px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .design-archives .viewall a:hover,
+  .design-archives .viewall a:focus,
+  .design-archives .viewall a:active,
+  .design-archives a:hover::before,
+  .design-archives a:focus::before,
+  .design-archives a:active::before {
+    color: #000;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 1px;
+  }
+  .design-archives .previous a::before {
+    content: "<";
+  }
+  .design-archives .next a::before {
+    content: ">";
+  }
+}
+@keyframes mymove {
+  0% {
+    top: 0px;
+    left: 0px;
+    color: #ffa69e;
+  }
+  25% {
+    top: 0px;
+    left: 50px;
+    color: #faf3dd;
+  }
+  50% {
+    top: 50px;
+    left: 50px;
+    color: #b8f2e6;
+  }
+  75% {
+    top: 50px;
+    left: 0px;
+    color: #aed9e0;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    color: #93969e;
+  }
+}
+/* 1800 and up */
+@media screen and (min-width: 1800px) {
+  body {
+    font-size: 150%;
+  }
+}
+/* 2100 and up */
+@media screen and (min-width: 2100px) {
+  body {
+    font-size: 175%;
+  }
+}
+/* 2500 and up */
+@media screen and (min-width: 2500px) {
+  body {
+    font-size: 200%;
+  }
+}
